@@ -49,8 +49,4 @@ COPY Gemfile Gemfile.lock /tmp/
 RUN bundle install -j ${BUNDLE_JOBS} --retry ${BUNDLE_RETRY}
 RUN yarn install
 
-RUN git config --global url."https://github.com/".insteadOf git@github.com:
-# O para asegurar que no pida login:
-RUN git config --global url."https://".insteadOf git://
-
 WORKDIR /app
